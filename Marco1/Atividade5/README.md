@@ -1,5 +1,7 @@
-package Marco1.Atividade5;
+**Atividade Prática 6**
+        Implemente um TAD LDE que armazena inteiros:
 
-public class README {
-    
-}
+        
+        Em seguida, refatore o método remove() de modo que a busca ocorra em outro método e seu retorno seja utilizado no método remove();
+
+        Implemente o método de impressão de modo que seja possível escrever os inteiros em ambos os sentidos;
