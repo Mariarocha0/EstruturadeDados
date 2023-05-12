@@ -21,7 +21,7 @@ public class Cartesiano {
     private void setY1(double y1){this.y1 = y1;}
     private void setY2(double y2){this.y2 = y2;}
 
-    public double operacaopcartesiano(){
-        return Math.sqrt(Math.pow((getX2()-getX1()), 2)+Math.pow((getY1()-getY2()), 2));
+    public double operacaopcartesiano() {
+        return Math.sqrt(Math.pow((getX2() - getX1()), 2) + Math.pow((getY1() - getY2()), 2));
     }
 }
