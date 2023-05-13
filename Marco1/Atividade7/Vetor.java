@@ -1,5 +1,7 @@
 package Marco1.Atividade7;
- 
+
+import java.util.Random;
+
 public class Vetor {
     private int[] array = new int[0];
     private int totalNumeros = 0; 
@@ -25,14 +27,14 @@ public class Vetor {
         this.totalNumeros++;
     }
 
-    public int maxRecusao(int array[], int inicio, int fim){
+    public int maxRecursao(int array[], int inicio, int fim){
         if(inicio == fim){
             return array[inicio];
         }
 
         int meio = (inicio + fim) / 2;
-        int maior1 = maxRecusao(array, inicio, meio);
-        int maior2 = maxRecusao(array, meio + 1, fim);
+        int maior1 = maxRecursao(array, inicio, meio);
+        int maior2 = maxRecursao(array, meio + 1, fim);
 
         if(maior1 > maior2){
             return maior1;
@@ -42,7 +44,7 @@ public class Vetor {
     }
 
 
-    public int maxInteracao(int numero){
+    public int maxIteracao(int numero){
         int maior = 0;
         for(int i = 0; i < numero; i++){
             if(this.array[i] > maior){
@@ -52,5 +54,16 @@ public class Vetor {
         return maior;
     }
 
+    public int[] gerandoAleatorio() {
+        int[] vetor = new int[1000];
+        Random random = new Random();
 
+        for (int i = 0; i < 1000; i++) {
+            vetor[i] = random.nextInt(9999);
+        }
+
+        return vetor;
+    }
 }
+
+
