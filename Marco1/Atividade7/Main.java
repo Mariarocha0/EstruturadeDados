@@ -1,28 +1,20 @@
 package Marco1.Atividade7;
 
-
 public class Main {
-    public static void main (String[] args){
+    public static void main(String[] args) {
+        Vetor vetor = new Vetor(1000);
+        vetor.gerandoAleatorio();
 
-     
-        Vetor vetor = new Vetor();
-        int[] aleatorios = vetor.gerandoAleatorio();
-
-        for (int i = 0; i < aleatorios.length; i++) {
-                vetor.adicionar(aleatorios[i]);
-                
-        }       
-      
-        long InicioTempoRecursao = System.nanoTime();
-        System.out.println("Máximo de recursividade: " + vetor.maxRecursao(aleatorios, 0, aleatorios.length - 1));
-        long FimTempoRecursao = System.nanoTime();
-        long tempoRecursao = FimTempoRecursao - InicioTempoRecursao;
+        long inicioTempoRecursao = System.nanoTime();
+        System.out.println("Máximo de recursividade: " + (vetor.maxRecursao(0, 999)));
+        long fimTempoRecursao = System.nanoTime();
+        long tempoRecursao = fimTempoRecursao - inicioTempoRecursao;
         System.out.println("Tempo de execução recursividade: " + tempoRecursao + " nanosegundos");
 
-        long InicioTempoIteracao = System.nanoTime();
-        System.out.println("Máximo de interatividade: " + vetor.maxIteracao(aleatorios.length));
-        long FimTempoItenteracao = System.nanoTime();
-        long tempoIteracao = FimTempoItenteracao - InicioTempoIteracao;
+        long inicioTempoIteracao = System.nanoTime();
+        System.out.println("Máximo de interatividade: " +(vetor.maxIteracao()));
+        long fimTempoIteracao = System.nanoTime();
+        long tempoIteracao = fimTempoIteracao - inicioTempoIteracao;
         System.out.println("Tempo de execução iteratividade: " + tempoIteracao + " nanosegundos");
 
         if (tempoRecursao > tempoIteracao) {
@@ -32,6 +24,5 @@ public class Main {
             System.out.println("Recursivo é mais rápido");
             System.out.println("Espaço de tempo: " + (tempoIteracao - tempoRecursao) + " nanosegundos");
         }
-
     }
 }

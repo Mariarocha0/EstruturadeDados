@@ -3,38 +3,37 @@ package Marco1.Atividade7;
 import java.util.Random;
 
 public class Vetor {
-    private int[] array = new int[0];
+    private int[] numerosAleatorios;
     private int totalNumeros = 0; 
-    private int inicio = 0;
-    private int fim = 0; 
-    private int meio = 0; 
 
 
     public Vetor(){
-        this.array = new int[1000];
+        this.numerosAleatorios = new int[1000];
     }
 
+    public Vetor(int tamanho){
+        this.numerosAleatorios = new int[tamanho];
+    }
     public int tamanho(){
         return this.totalNumeros;
     }
 
     public void adicionar(int numero){
-        if(this.totalNumeros == this.array.length){
+        if(this.totalNumeros == this.numerosAleatorios.length){
             return;
         }
 
-        this.array[this.totalNumeros] = numero;
+        this.numerosAleatorios[this.totalNumeros] = numero;
         this.totalNumeros++;
     }
 
-    public int maxRecursao(int array[], int inicio, int fim){
+    public int maxRecursao(int inicio, int fim){
         if(inicio == fim){
-            return array[inicio];
-        }
-
+            return this.numerosAleatorios[inicio];
+        }else{
         int meio = (inicio + fim) / 2;
-        int maior1 = maxRecursao(array, inicio, meio);
-        int maior2 = maxRecursao(array, meio + 1, fim);
+        int maior1 = maxRecursao( inicio, meio);
+        int maior2 = maxRecursao( meio + 1, fim);
 
         if(maior1 > maior2){
             return maior1;
@@ -43,26 +42,23 @@ public class Vetor {
         }
     }
 
-
-    public int maxIteracao(int numero){
-        int maior = 0;
-        for(int i = 0; i < numero; i++){
-            if(this.array[i] > maior){
-                maior = this.array[i];
+    }
+    public int maxIteracao(){
+        int maior = this.numerosAleatorios[0];
+        for(int i = 0; i < totalNumeros; i++){
+            if(this.numerosAleatorios[i] > maior){
+                maior = this.numerosAleatorios[i];
             }
         }
         return maior;
     }
 
-    public int[] gerandoAleatorio() {
-        int[] vetor = new int[1000];
+    public void gerandoAleatorio() {
         Random random = new Random();
-
-        for (int i = 0; i < 1000; i++) {
-            vetor[i] = random.nextInt(9999);
+    
+        for (int i = 0; i < numerosAleatorios.length; i++) {
+            numerosAleatorios[i] = random.nextInt(1000);
         }
-
-        return vetor;
     }
 }
 
