@@ -11,7 +11,7 @@ public class Main {
         vetor.gerandoAleatorio();
         vetor.ordenaNumeros();
         vetor.imprime();
-        System.out.println("Máximo: " + vetor.maxRecursao(0,0));
+        System.out.println("Máximo: " + vetor.maxRecursao(vetor, 0, vetor.tamanho() - 1));
 
         System.out.println("Digite um número para buscar: ");
         int numero = entrada.nextInt();
@@ -20,21 +20,23 @@ public class Main {
 
         long Inicio = System.nanoTime();
         if(vetor.buscaBinaria(numero) == numero){
-            System.out.println("Número encontrado!"+ vetor.buscaBinaria(numero));
+            System.out.println("Busca binária:");
+            System.out.println("Número "+ vetor.buscaBinaria(numero) + " encontrado!");
         }else{
             System.out.println("Este número não foi encontrado!");
         }
         long Fim = System.nanoTime();
-        System.out.println("Tempo de execução: " + (Fim - Inicio) + "nanosegundos");
+        System.out.println("Tempo de execução: " + (Fim - Inicio) + " nanosegundos");
 
         long Inicio2 = System.nanoTime();
+        System.out.println("Busca recursiva:");
         if (vetor.buscaRecursao(vetor, 0, vetor.tamanho() - 1, numero) == numero) {
-            System.out.println("Número encontrado!"+ vetor.buscaRecursao(vetor, 0, vetor.tamanho() - 1, numero));
+            System.out.println("Número "+ vetor.buscaRecursao(vetor, 0, vetor.tamanho() - 1, numero) + " encontrado!");
         } else {
             System.out.println("Este número não foi encontrado!");
         }
         long Fim2 = System.nanoTime();
-        System.out.println("Tempo de execução: " + (Fim2 - Inicio2) + "nanosegundos");
+        System.out.println("Tempo de execução: " + (Fim2 - Inicio2) + " nanosegundos");
         
     }
     

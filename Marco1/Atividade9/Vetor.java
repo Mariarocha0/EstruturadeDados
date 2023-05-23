@@ -1,5 +1,4 @@
-package Marco1.Atividade8;
-
+package Marco1.Atividade9;
 
 import java.util.Random;
 
@@ -88,11 +87,6 @@ public class Vetor{
         }
     }
 
-    public void gerandoAleatorioEmOrdem(){
-        for (int i=0; i < totalNumeros; i++){
-            this.adicionaEmOrdem(random.nextInt(1000));
-        }
-    }
 
     public int maxRecursao(Vetor vetor, int inicio, int fim){
         int meio=0, max1 = 0, max2 = 0;
@@ -144,23 +138,50 @@ public class Vetor{
         return -1;  
     }
 
-    public void ordenaNumeros(){
-        int temp = 0;
-        for ( int i = 0; i <this.numerosAleatorios.length; i++){
-            for(int j=i+1; j < this.numerosAleatorios.length; j++){
-                if (this.numerosAleatorios[i] > this.numerosAleatorios[j]){
-                    temp = this.numerosAleatorios[i];
-                    this.numerosAleatorios[i] = this.numerosAleatorios[j];
-                    this.numerosAleatorios[j] = temp;
-                }
-            }
-        }
-    }
-
     public void imprime(){
         for(int i=0; i < totalNumeros; i++){
             System.out.println(numerosAleatorios[i]);
         }
     }
 
+    public void bubble_sort(){
+        for (int i = 0; i < this.totalNumeros; i++){
+            for (int j = 0; j < this.totalNumeros-1; j++){
+                if (this.numerosAleatorios[j] > this.numerosAleatorios[j+1]) {
+                    int aux = this.numerosAleatorios[j];
+                    this.numerosAleatorios[j] = this.numerosAleatorios[j+1];
+                    this.numerosAleatorios[j+1] = aux;
+                }
+            }
+        }
+    }
+
+    public void selection_sort(){
+        for (int i = 0; i < this.totalNumeros; i++) {
+            int menor = i;
+            for (int j = i+1; j < this.totalNumeros; j++){
+                if (this.numerosAleatorios[j] < this.numerosAleatorios[menor]){
+                    menor = j;
+                    int aux = numerosAleatorios[i];
+                    this.numerosAleatorios[i] = this.numerosAleatorios[menor];
+                    this.numerosAleatorios[menor] = aux;
+                }
+            }
+        }
+    }
+
+    public void insertion_sort() {
+        for (int i = 1; i < this.totalNumeros; i++) {
+            int chave = this.numerosAleatorios[i];
+            int j = i - 1;
+            while (j >= 0 && chave < this.numerosAleatorios[j]) {
+                this.numerosAleatorios[j + 1] = this.numerosAleatorios[j];
+                j--;
+            }
+            this.numerosAleatorios[j + 1] = chave;
+        }
+    }
+        
+
+	
 }
