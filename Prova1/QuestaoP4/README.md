@@ -6,6 +6,7 @@
         D) O(n) = 3 + 5n log n
 
 RESPOSTA:
+
 D) O(n) = 3 + 5n log n    Mais complexo
 A) O(n) = 4n² + 3n + 2      
 C) O(n) = 2√n+12          
