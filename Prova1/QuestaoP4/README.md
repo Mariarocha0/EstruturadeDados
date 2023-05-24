@@ -8,6 +8,7 @@
 RESPOSTA:
 
 D) O(n) = 3 + 5n log n    Mais complexo
+
 A) O(n) = 4n² + 3n + 2      
 C) O(n) = 2√n+12          
 B) O(n) = 2ⁿ + 34         Menos complexo
