@@ -1,0 +1,28 @@
+package Prova1.QuestaoP8;
+
+public class Main {
+    public static void main(String[] args) {
+		LDE lista = new LDE();
+		LDE lista2 = new LDE();
+		
+		lista.insereFim(1);
+		lista.insereFim(2);
+		lista.insereFim(3);
+		lista.insereFim(4);
+		System.out.println("List 1: ");
+		lista.imprimeListaInicio();
+
+		lista2.insereFim(5);
+		lista2.insereFim(6);
+		lista2.insereFim(7);
+		lista2.insereFim(8);
+		System.out.println("List 2: ");
+		lista2.imprimeListaInicio();
+		
+		lista.concat(lista2);
+
+		System.out.println("List concatenated: ");
+		lista.imprimeListaInicio();
+		
+	}
+}

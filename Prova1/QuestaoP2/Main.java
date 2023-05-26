@@ -14,8 +14,8 @@ public class Main {
         }
     }
 
+    }
 
-    
      /* Métodos auxiliares: */
      private int posMaior (int fim) {
         int maior = fim;
@@ -30,3 +30,4 @@ public class Main {
         valor[a] = valor[b];
         valor[b] = aux;
      }
+    }
