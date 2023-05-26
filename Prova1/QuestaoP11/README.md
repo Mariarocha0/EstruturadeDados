@@ -1,0 +1,2 @@
+**Questão 11**
+        Dado o vetor a seguir [7, 1, 1, 3, 2], explique com suas palavras o conceito de estabilidade em um algoritmo de ordenação. Além disso, demonstre, desenhando o estado do vetor a cada troca de elementos. 
