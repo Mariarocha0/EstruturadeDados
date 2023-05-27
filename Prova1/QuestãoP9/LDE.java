@@ -7,7 +7,7 @@ public class LDE {
         this.inicio = null;
     }
     
-    public void addinicio(Object info) {
+    public void insereInicio(int info) {
         Noh novoNoh = new Noh(info);
         
         if (inicio == null)
@@ -18,16 +18,16 @@ public class LDE {
         }
     }
     
-    public void insereFim(Object info) {
+    public void insereFim(int info) {
         Noh novoNoh = new Noh(info);
-        Noh aux = inicio;
-        
         if (inicio == null)
             inicio = novoNoh;
         else {
-            while (aux.getProximo() != null)
-                aux = aux.getProximo();
-            aux.setProximo(novoNoh);
+            Noh ultimo = null;
+            for(Noh i= inicio; i != null; i = i.getProximo()) {
+                ultimo = i;
+                ultimo.setProximo(novoNoh);
+            }
         }
     }
     
@@ -35,7 +35,7 @@ public class LDE {
         return inicio == null;
     }
     
-    public boolean remove(Object info) {
+    public boolean remove(int info) {
         Noh atual;
         Noh anterior = null;
         atual = inicio;
@@ -67,11 +67,11 @@ public class LDE {
         return tamanho;
     }
 
-    public Object getPrimeiro() {
+    public int getPrimeiro() {
         return inicio.getInfo();
     }
 
-    public Object getUltimo() {
+    public int getUltimo() {
         Noh aux = inicio;
         while (aux.getProximo() != null) {
             aux = aux.getProximo();
@@ -92,8 +92,8 @@ public class LDE {
 
         for(Noh i = inicio; i != null; i = i.getProximo()) {
             for(Noh j = inicio; j != null; j = j.getProximo()) {
-                if((int) i.getInfo() < (int) j.getInfo()) {
-                    Object aux = i.getInfo();
+                if( i.getInfo() <  j.getInfo()) {
+                    int aux = i.getInfo();
                     i.setInfo(j.getInfo());
                     j.setInfo(aux);
                 }
@@ -101,6 +101,16 @@ public class LDE {
         }
         
 
+    }
+
+    public String imprimeString(){
+        String s = "";
+        Noh aux = inicio;
+        while (aux != null) {
+            s += aux.getInfo() + " ";
+            aux = aux.getProximo();
+        }
+        return s;
     }
     
     public void imprimeEmOrdem() {

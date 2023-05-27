@@ -14,7 +14,7 @@ public class Main {
 		lista.bubbleSort();
 
 		System.out.println("Lista ordenada: ");
-		lista.imprimeEmOrdem();
+		System.out.println(lista.imprimeString());
 
 	}
 
