@@ -60,7 +60,7 @@ public class PilhaLista implements IPilha {
         while (!pilhaTemp.estaVazia()) {
             Object elemento = pilhaTemp.pop();
             pilhaCopia.push(elemento);
-        }
+            push(elemento);        }
         
         return pilhaCopia;
     }
